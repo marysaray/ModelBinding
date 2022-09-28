@@ -34,5 +34,19 @@ namespace ModelBinding.Controllers
             // Return data back to home page
             return RedirectToAction("Index", "Home");
         }
+
+        // ModelBinding
+        [HttpGet]
+        public IActionResult CreateWithModelBinding()
+        {
+            ViewData["Title"] = "Create a new product";
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateWithModelBinding(Product p)
+        {
+            return View();
+        }
     }
 }

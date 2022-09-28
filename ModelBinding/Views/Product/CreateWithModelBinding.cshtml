@@ -1,0 +1,29 @@
+﻿@model Product
+@*
+	-- Added this in ProductController
+@{
+	ViewData["Title"] = "Create a new product";
+}
+*@
+
+
+<h2>Create Product</h2>
+
+<form method="post">
+	<label asp-for="Title"></label>
+	<input asp-for="Title" />
+	<span asp-validation-for="Title"></span>
+	<br />
+
+	<label asp-for="Price"></label>
+	<input asp-for="Price" />
+	<span asp-validation-for="Price"></span>
+	<br />
+
+	<label asp-for="Qty"></label>
+	<input asp-for="Qty" />
+	<span asp-validation-for="Qty"></span>
+	<br />
+
+	<input type="submit" value="Add Product" />
+</form>

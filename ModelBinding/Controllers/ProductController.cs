@@ -46,7 +46,16 @@ namespace ModelBinding.Controllers
         [HttpPost]
         public IActionResult CreateWithModelBinding(Product p)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                // Add to database here
+
+                return RedirectToAction("Index", "Home"); // Send back to home page
+            }
+            // If the ModelState is not valid
+            // show the user the same web page, with validation
+            // errors
+            return View(p); // pass in p for product model
         }
     }
 }

@@ -10,20 +10,32 @@
 <h2>Create Product</h2>
 
 <form method="post">
-	<label asp-for="Title"></label>
-	<input asp-for="Title" />
-	<span asp-validation-for="Title"></span>
-	<br />
+	<div class="col-md-6">
+		<div class="form-group">
+			<label class="control-label" asp-for="Title"></label>
+			<input class="form-control" asp-for="Title" />
+			<span class="text-danger" asp-validation-for="Title"></span>
+		</div>
 
-	<label asp-for="Price"></label>
-	<input asp-for="Price" />
-	<span asp-validation-for="Price"></span>
-	<br />
+		<div class="form-group">
+			<label class="control-label" asp-for="Price"></label>
+			<input class="form-control" asp-for="Price" />
+			<span class="text-danger" asp-validation-for="Price"></span>
+		</div>
 
-	<label asp-for="Qty"></label>
-	<input asp-for="Qty" />
-	<span asp-validation-for="Qty"></span>
-	<br />
+		<div class="form-group">
+			<label class="control-label" asp-for="Qty"></label>
+			<input class="form-control" asp-for="Qty" />
+			<span class="text-danger" asp-validation-for="Qty"></span>
+		</div>
+		<br />
 
-	<input type="submit" value="Add Product" />
+		<div class="form-group">
+			<input class="btn btn-primary form-control" type="submit" value="Add Product" />
+		</div>
+	</div>
 </form>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}
